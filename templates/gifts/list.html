@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block main %}
+
+    {% for gift in gifts %}
+        <br>{{ gift.name }}
+    {% empty %}
+        Hmmm, jeszcze nie wiemy czego chcemy... Na pewno działka, dom i samochód.
+    {% endfor %}
+
+{% endblock %}
