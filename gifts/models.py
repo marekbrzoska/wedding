@@ -11,5 +11,5 @@ class Gift(models.Model):
 
 
 class Link(models.Model):
-    gift = models.ForeignKey(Gift)
+    gift = models.ForeignKey(Gift, related_name="links")
     href = models.CharField(max_length=200)
