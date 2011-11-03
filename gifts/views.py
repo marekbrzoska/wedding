@@ -46,7 +46,7 @@ def reserve_gift(request, gift_id):
 
     form = ReserveGiftForm(request.POST)
     if form.is_valid():
-        gift.buyer = form['buyer']
+        gift.buyer = form.cleaned_data['buyer']
         gift.save()
         return render(request, 'gifts/reserved.html', {'gift' : gift})
     else:
