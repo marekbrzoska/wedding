@@ -13,7 +13,6 @@ urlpatterns = patterns('',
     url(r'^$', 'gifts.views.home', name='home'),
     url(r'^gifts$', 'gifts.views.list', name='gifts'),
     url(r'^gift/(\d+)$', 'gifts.views.show', name='gift'),
-    url(r'^gift/(\d+)/reserve$', 'gifts.views.reserve', name='reserve_gift'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

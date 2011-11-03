@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+{% block subtitle %}
+    - Gift: {{ gift.name }}
+{% endblock %}
+
+
+{% block main %}
+
+    {{ gift.name }}
+    {% for link in gift.links.all %}
+        {% if forloop.counter == 1 %}e.g.:{% endif %}
+        <a href="{{ link.href }}">this one</a>
+        {% if forloop.revcounter0 > 0 %} or {% endif %}
+    {% endfor %}
+    <br>
+    {% if form %}
+        <form method='post' action='{% url gift gift.id %}'>
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="I will buy this for you!">
+        </form>
+    {% endif %}
+
+{% endblock %}

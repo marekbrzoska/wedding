@@ -1,16 +1,20 @@
 {% extends 'base.html'%}
 
+{% block subtitle %}
+    - Gift List
+{% endblock %}
+
 {% block main %}
 
     {% for gift in gifts %}
         <br> 
         {% if not gift.is_reserved %}
-            {{ gift.name }}
-            <a href="{% url gift gift.id %}">I will buy this!</a>
+            <a href="{% url gift gift.id %}">{{ gift.name }}</a>
         {% else %}
-            <span style="text-decoration line-through">
-                {{ gift.name }}
-            </span>
+            <strike>
+                <a href="{% url gift gift.id %}">{{ gift.name }}</a>
+            </strike> 
+            <small>(reserved)</small>
         {% endif %}
     {% empty %}
         Hmmm, jeszcze nie wiemy czego chcemy... Na pewno działka, dom i samochód.
