@@ -1,7 +1,15 @@
 <html>
     <head>
+        <title>
+            {% block title %}
+                Ania &amp; Marek's Wedding page
+                {% block subtitle %}
+                {% endblock %}
+            {% endblock %}
+        </title>
     </head>
     <body>
+        {% include "navi.html" %}
         {% block main %}
         {% endblock %}
     </body>
