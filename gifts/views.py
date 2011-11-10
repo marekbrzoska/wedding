@@ -1,4 +1,5 @@
 #-*- coding=utf-8 -*- 
+
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseForbidden, HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -7,8 +8,11 @@ from wedding.gifts.models import Gift
 from wedding.gifts.forms import ReserveGiftForm
 
 
-def home(request):
-    return render(request, 'home.html')
+
+############################################################
+# request handlers #########################################
+############################################################
+
 
 def list(request):
     gifts = Gift.objects.order_by('id')
@@ -24,7 +28,17 @@ def list(request):
             )
 
 def show(request, gift_id):
-    return reserve_gift(request, gift_id) if request.method == 'POST' else show_gift(request, gift_id)
+    if request.method == 'POST':
+        return reserve_gift(request, gift_id)  
+    else:
+        return show_gift(request, gift_id)
+
+
+
+############################################################
+# worker functions, not accessible directly from urls ######
+############################################################
+
 
 def show_gift(request, gift_id):
     gift = get_object_or_404(Gift, id=gift_id)

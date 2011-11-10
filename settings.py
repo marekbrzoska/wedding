@@ -49,18 +49,18 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = join(PROJECT_ROOT, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = 'media'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = '/home/mbr/work/wedding/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -87,7 +87,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 's5^f4ck+hohkiha-dkg1)#ai)!l_m7%b7g31sv+6#6t#+#k8$w'
+SECRET_KEY = 's5^f4ck)!l_m7+hoh31sv+6#6tkiha-dk#ai)g1%b7g#+#k8$w'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -106,11 +106,20 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'wedding.urls'
 
-TEMPLATE_DIRS = (
+THIS_PROJECT_APPS = (
+    'gifts',
+    'base',
+)
+
+TEMPLATE_DIRS = tuple(
+        map(
+            lambda dir: join(PROJECT_ROOT, dir, 'templates'), 
+            THIS_PROJECT_APPS
+            )
+        ) + (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    join(PROJECT_ROOT, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -123,8 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django_extensions',
-    'wedding.gifts',
-)
+) + THIS_PROJECT_APPS
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
