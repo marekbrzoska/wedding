@@ -1,3 +1,4 @@
+<!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
         <title>
@@ -7,11 +8,67 @@
                 {% endblock %}
             {% endblock %}
         </title>
+        <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico"> 
+        <link rel="stylesheet" href="{{ STATIC_URL }}style.css" type="text/css">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="
+            {% block description %}
+                Strona ślubna Ani i Marka
+            {% endblock %}
+            ">
     </head>
     <body>
-        {% include "navi.html" %}
-        {% block main %}
-        {% endblock %}
+        {# include "navi.html" #}
+
+
+
     </body>
+        <div class="zk"></div>
+        <div class="prezent"></div>
+        <h1>
+            Strona ślubna Ani i Marka
+        </h1>
+        <div class="slogan">
+
+            Witamy na stronie przygotowanej z okazji naszego ślubu!
+
+        </div>
+        <div class="all_sites_description">
+
+            <b>Zapraszamy na nasz ślub</b><br>
+            Zapraszamy 28 lipca 2012 o godzinie 11:00 do kościoła na Karczówce w Kielcach na uroczystość zawarcia przez nas związku małżeńskiego.
+
+        </div>
+
+        <div class="mn">
+            {% include "navi.html" %}
+        </div>
+
+        <div class="cn">
+            {% block main %}{% endblock %}
+        </div>
+        <div class="ft">
+
+            <div class="linki">
+
+                &bull; <a href="#" title=""><b>Strona główna</b></a>
+                &bull; <a href="#" title="">Lorem ipsa <b>Dolor</b></a>
+                &bull; <a href="#" title="">Amet <b>Consectetur</b></a>
+                &bull; <a href="#" title="">Adipisicing <b>Elit sed</b></a>
+                &bull; <a href="#" title="">Dignissim feugiat</a>
+                &bull; <a href="#" title="">Eiusmod <b>Tempor</b></a>
+                &bull; <a href="reklama.php">Reklama</a> 
+                &bull; <a href="kontakt.php">Kontakt</a> &bull; 
+
+                <br><br>
+
+                &copy; 2008 by <a href="#" title="">Nazwa witryny</a>, All Rights Reserved.
+                <br>
+                Layout &copy; by <a href="http://www.grx.pl" title="Szablony WWW">GRX.pl - Szablony WWW</a>
+
+            </div>
+
+        </div>
 </html>
 

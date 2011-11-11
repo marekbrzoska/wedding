@@ -24,6 +24,13 @@ DATABASES = {
     }
 }
 
+# Use this for custom apps instead of direct adding to installed apps
+# this is used for templates dirs and static dirs
+THIS_PROJECT_APPS = (
+    'gifts',
+    'base',
+)
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -60,7 +67,7 @@ MEDIA_URL = 'media'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/home/mbr/work/wedding/static/'
+STATIC_ROOT = join(PROJECT_ROOT, 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -72,7 +79,12 @@ STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
-STATICFILES_DIRS = (
+STATICFILES_DIRS = tuple(
+        map(
+            lambda app_name: join(PROJECT_ROOT, app_name, 'templates'), 
+            THIS_PROJECT_APPS
+            )
+        ) + (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -106,14 +118,9 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'wedding.urls'
 
-THIS_PROJECT_APPS = (
-    'gifts',
-    'base',
-)
-
 TEMPLATE_DIRS = tuple(
         map(
-            lambda dir: join(PROJECT_ROOT, dir, 'templates'), 
+            lambda app_name: join(PROJECT_ROOT, app_name, 'templates'), 
             THIS_PROJECT_APPS
             )
         ) + (
