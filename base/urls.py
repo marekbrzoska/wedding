@@ -6,5 +6,8 @@ import settings
 
 urlpatterns = patterns('',
     url(r'^$', 'base.views.home', name='home'),
+    url(r'^about$', 'base.views.about', name='about'),
+    url(r'^directions$', 'base.views.directions', name='directions'),
+    url(r'^about$', 'base.views.about', name='about'),
     url(r'^static/(.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )

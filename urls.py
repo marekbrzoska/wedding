@@ -10,6 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^gifts/', include(gifts.urls)),
+    #url(r'^galery/$', 'galery.views.list', name='galery'),
 
     # admin and admin docs
     url(r'^admin/', include(admin.site.urls)),
