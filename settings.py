@@ -1,4 +1,4 @@
-# Django settings for wedding project.
+#-*- coding=utf-8 -*- 
 
 from os.path import join, dirname
 
@@ -81,7 +81,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 # Additional locations of static files
 STATICFILES_DIRS = tuple(
         map(
-            lambda app_name: join(PROJECT_ROOT, app_name, 'templates'), 
+            lambda app_name: join(PROJECT_ROOT, app_name, 'static'), 
             THIS_PROJECT_APPS
             )
         ) + (
