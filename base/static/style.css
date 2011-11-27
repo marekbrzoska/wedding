@@ -308,3 +308,7 @@ div.pdolne {
 	background: url('gfx/zk.gif') no-repeat 1px 1px;
 	margin-bottom: 15px;
 	}
+
+.reserved {
+    text-decoration: line-through;
+}

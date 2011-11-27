@@ -1,34 +1,34 @@
-{% extends 'base.html'%}
-
-{% block subtitle %}
-    - Gift List
-{% endblock %}
+{% extends 'base.html' %}
 
 {% block main %}
             <div class="cn_2">
                 <table border="0" width="730" cellpadding="10">
                     <tr>
                         <td valign="top" align="center">
-                            {% for gift in gifts %}
                             <div class="nwsa">
+                                <h3 class="newstt">
+                                    Ania
+                                </h3>
                                 <p>
-                                    <a href="{% url gift gift.id %}">
-                                        {% if not gift.is_reserved %}
-                                            {{ gift.name }}
-                                        {% else %}
-                                            <span class='reserved'>
-                                                {{ gift.name }}
-                                            </span> 
-                                            <small>(zarezerwowane)</small>
-                                        {% endif %}
+                                    <img src="gfx/ilu2.jpg" alt="" style="float: right; margin-left:10px">
+                                    <a href="mailto:tracz.ania@gmail.com">
+                                        Anna Tracz
                                     </a>
                                 </p>
                             </div>
-                            {% empty %}
-                                Hmmm, jeszcze nie wiemy czego chcemy... Na pewno działka, dom i samochód.
-                            {% endfor %}
-                        </td>
-                        <td valign="top">
+
+                            <div class="nwsa">
+                                <h3 class="newstt">
+                                    Marek
+                                </h3>
+                                <p>
+                                    <a href="mailto:brzoskamarek@gmail.com">
+                                        Marek Brzóska
+                                    </a>
+                                </p>
+                            </div>
+
+                            </td><td valign="top">
 
                             <div class="mala_ramka"><a href="#"><img src="gfx/ilu4.jpg" alt="" border="0" width="70" height="70"></a></div>
                             <div class="mala_ramka"><a href="#"><img src="gfx/ilu1.jpg" alt="" border="0" width="70" height="70"></a></div>
@@ -40,5 +40,4 @@
                 </table>
 
             </div>
-
 {% endblock %}

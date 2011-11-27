@@ -11,3 +11,6 @@ def about(request):
 
 def directions(request):
     return render(request, 'directions.html')
+
+def contact(request):
+    return render(request, 'contact.html')
