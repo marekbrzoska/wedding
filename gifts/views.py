@@ -1,8 +1,7 @@
 #-*- coding=utf-8 -*- 
 
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseForbidden, HttpResponse, HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.http import HttpResponseForbidden
 
 from wedding.gifts.models import Gift
 from wedding.gifts.forms import ReserveGiftForm
@@ -56,7 +55,7 @@ def show_gift(request, gift_id):
 def reserve_gift(request, gift_id):
     gift = get_object_or_404(Gift, id=gift_id)
     if gift.buyer:
-        return HttpResponseForbidden("Somebody has already declared buying this present!")
+        return HttpResponseForbidden("Ktoś inny już to kupuje...")
 
     form = ReserveGiftForm(request.POST)
     if form.is_valid():

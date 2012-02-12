@@ -4,6 +4,7 @@ from django.db import models
 class Gift(models.Model):
     name = models.CharField(max_length=200, verbose_name='Gift')
     buyer = models.CharField(max_length=200, blank=True, null=True)
+    notice = models.TextField(blank=True, null=True)
     buyer_declaration_date = models.DateTimeField(blank=True, null=True, default=None)
 
     def __unicode__(self):
