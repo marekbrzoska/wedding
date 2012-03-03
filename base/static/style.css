@@ -224,7 +224,7 @@ div.rama:hover {
 
 .mala_ramka {
 	width: 75px;
-	height: 75px;
+	height: auto;
 	border: 1px solid #ddd;
 	font-size:12px;
 	padding:10px;
@@ -233,7 +233,15 @@ div.rama:hover {
 	display: block;
 	position: relative;
 	margin-bottom: 15px;
+    display: table-cell;
+    vertical-align: middle;
 	}
+
+.maly_obrazek {
+    max-width: 100%;
+    max-height: 100%;
+    border: 0;
+    }
 
 div.ldolne {
 	position: absolute;
