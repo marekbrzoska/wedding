@@ -1,7 +1,6 @@
 tags
 *.pyc
 zdjęcia na stronkę/
-wedding.db
 pid
 uwsgi_output
 uwsgi_log
