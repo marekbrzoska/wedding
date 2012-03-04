@@ -233,6 +233,8 @@ div.rama:hover {
 	display: block;
 	position: relative;
 	margin-bottom: 15px;
+    display: table-cell;
+    vertical-align: middle;
 	}
 
 .maly_obrazek {
