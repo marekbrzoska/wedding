@@ -1,46 +1,39 @@
 {% extends 'base.html' %}
 
 {% block main %}
-            <div class="cn_2">
-                <table border="0" width="730" cellpadding="10">
-                    <tr>
-                        <td valign="top" align="center">
-                            <div class="nwsa">
-                                <h3 class="newstt">
-                                    Ania
-                                </h3>
-                                <p>
-                                    <img src="gfx/ilu2.jpg" alt="" style="float: right; margin-left:10px">
-                                    <a href="mailto:tracz.ania@gmail.com">
-                                        Anna Tracz
-                                    </a>
-                                </p>
-                            </div>
-
-                            <div class="nwsa">
-                                <h3 class="newstt">
-                                    Marek
-                                </h3>
-                                <p>
-                                    <a href="mailto:brzoskamarek@gmail.com">
-                                        Marek Brzóska
-                                    </a>
-                                </p>
-                            </div>
-
-                            </td><td valign="top">
-
-                            <div class="mala_ramka"><img class="maly_obrazek" src="{{ STATIC_URL }}/photos/ilu9.jpg" alt="obrazek" ></div>
-                                <br>
-                            <div class="mala_ramka"><img class="maly_obrazek" src="{{ STATIC_URL }}/photos/ilu10.jpg" alt="obrazek"></div>
-                                <br>
-                            <div class="mala_ramka"><img class="maly_obrazek" src="{{ STATIC_URL }}/photos/ilu11.jpg" alt="obrazek"></div>
-                                <br>
-                            <div class="mala_ramka"><img class="maly_obrazek" src="{{ STATIC_URL }}/photos/ilu12.jpg" alt="obrazek"></div>
-
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
+    <div class="cn_2">
+        <table border="0" width="730" cellpadding="10">
+            <tr>
+                <td valign="top" align="center">
+                    <div class="nwsa">
+                        <h3 class="newstt">
+                            Ania
+                        </h3>
+                        <p>
+                            <!--<img src="gfx/ilu2.jpg" alt="" style="float: right; margin-left:10px">-->
+                            <a href="mailto:tracz.ania@gmail.com">
+                                Anna Tracz
+                            </a>
+                        </p>
+                    </div>
+                    <div class="nwsa">
+                        <h3 class="newstt">
+                            Marek
+                        </h3>
+                        <p>
+                            <a href="mailto:brzoskamarek@gmail.com">
+                                Marek Brzóska
+                            </a>
+                        </p>
+                    </div>
+                </td>
+                <td valign="top">
+                    <div class="mala_ramka"><a href="{{ STATIC_URL }}/photos/normal.ilu9.jpg"><img class="maly_obrazek" src="{{ STATIC_URL }}/photos/thumb.ilu9.jpg" alt="obrazek" ></a></div> <br>
+                    <div class="mala_ramka"><a href="{{ STATIC_URL }}/photos/normal.ilu10.jpg"><img class="maly_obrazek" src="{{ STATIC_URL }}/photos/thumb.ilu10.jpg" alt="obrazek"></a></div> <br>
+                    <div class="mala_ramka"><a href="{{ STATIC_URL }}/photos/normal.ilu11.jpg"><img class="maly_obrazek" src="{{ STATIC_URL }}/photos/thumb.ilu11.jpg" alt="obrazek"></a></div> <br>
+                    <div class="mala_ramka"><a href="{{ STATIC_URL }}/photos/normal.ilu12.jpg"><img class="maly_obrazek" src="{{ STATIC_URL }}/photos/thumb.ilu12.jpg" alt="obrazek"></a></div> 
+                </td>
+            </tr>
+        </table>
+    </div>
 {% endblock %}
