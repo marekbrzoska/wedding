@@ -8,13 +8,14 @@
 {% block main %}
 
 <h2>{{ gift.name }}</h2>
+    {% for link in gift.links.all %}
+        {% if forloop.counter == 1 %}na przykład:{% endif %}
+        <br>
+        {% if forloop.counter > 1 %} lub <br>{% endif %}
+        stąd: <a href="{{ link.href }}">{{ link.href }}</a>
+    {% endfor %}
+    <br><br>
     {% if form %}
-        {% for link in gift.links.all %}
-            {% if forloop.counter == 1 %}na przykład:{% endif %}
-            <br>
-            {% if forloop.counter > 1 %} lub <br>{% endif %}
-            stąd: <a href="{{ link.href }}">{{ link.href }}</a>
-        {% endfor %}
         <br>
         <form method='post' action='{% url gift gift.id %}'>
             {% csrf_token %}
@@ -22,7 +23,7 @@
             <input type="submit" value="Kupię wam to!">
         </form>
     {% else %}
-        <big>Ktoś już obiecał, że nam to kupi:)</big>
+        <big><strong>Ktoś już obiecał, że nam to kupi...</strong></big>
     {% endif %}
 
 {% endblock %}
