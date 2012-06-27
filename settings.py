@@ -163,3 +163,8 @@ LOGGING = {
         },
     }
 }
+
+try:
+    execfile(join(PROJECT_ROOT, 'local_settings.py'))
+except IOError:
+    pass

@@ -4,3 +4,6 @@ zdjęcia na stronkę/
 pid
 uwsgi_output
 uwsgi_log
+.idea
+dev.db
+local_settings.py
