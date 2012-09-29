@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<h1>Galleries for {{ month|date:"F Y" }}</h1>
+{# <h1>Galleries for {{ month|date:"F Y" }}</h1> #}
 
 {% if object_list %}
     {% for gallery in object_list %}
@@ -22,6 +22,6 @@
     <p>No galleries were found.</p>
 {% endif %}
 
-<p><a href="{% url 'pl-gallery-list' 1 %}">View all galleries.</a></p>
+{#<p><a href="{% url 'pl-gallery-list' 1 %}">View all galleries.</a></p>#}
 
 {% endblock %}
