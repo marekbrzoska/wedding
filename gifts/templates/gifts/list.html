@@ -7,6 +7,7 @@
         <table border="0" width="730" cellpadding="10">
             <tr>
                 <td valign="top" align="center">
+                    {% comment %}
                     {% for gift in gifts %}
                     <div class="nwsa">
                         <p>
@@ -25,6 +26,14 @@
                     {% empty %}
                         Hmmm, jeszcze nie wiemy czego chcemy... Na pewno działka, dom i samochód.
                     {% endfor %}
+                    {% endcomment %}
+                    <p>
+                    Dostaliśmy całą górę świetnych prezentów:) Dziękujemy za nie serdecznie!
+                    </p>
+                    <p>
+                        {# A teraz zapraszamy do <a href="/photologue/gallery/">naszej galerii.</a> #}
+                    </p>
+
                 </td>
                 <td valign="top">
                     <div class="mala_ramka"><a href="{{ STATIC_URL }}/photos/normal.ilu13.jpg"><img class="maly_obrazek" src="{{ STATIC_URL }}/photos/thumb.ilu13.jpg" alt="obrazek"></a></div> <br>

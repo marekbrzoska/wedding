@@ -1,4 +1,4 @@
-#-*- coding=utf-8 -*- 
+#-*- coding=utf-8 -*-
 
 from os.path import join, dirname
 
@@ -61,7 +61,7 @@ MEDIA_ROOT = join(PROJECT_ROOT, 'media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'media'
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -81,7 +81,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 # Additional locations of static files
 STATICFILES_DIRS = tuple(
         map(
-            lambda app_name: join(PROJECT_ROOT, app_name, 'static'), 
+            lambda app_name: join(PROJECT_ROOT, app_name, 'static'),
             THIS_PROJECT_APPS
             )
         ) + (
@@ -120,7 +120,7 @@ ROOT_URLCONF = 'wedding.urls'
 
 TEMPLATE_DIRS = tuple(
         map(
-            lambda app_name: join(PROJECT_ROOT, app_name, 'templates'), 
+            lambda app_name: join(PROJECT_ROOT, app_name, 'templates'),
             THIS_PROJECT_APPS
             )
         ) + (
@@ -139,6 +139,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django_extensions',
+    'photologue',
+    'south',
 ) + THIS_PROJECT_APPS
 
 # A sample logging configuration. The only tangible logging

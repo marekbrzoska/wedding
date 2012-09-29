@@ -1,0 +1,22 @@
+{% extends "photologue/root.html" %}
+{% load url from future %}
+
+{% block content %}
+
+<h2>Galeria</h2>
+{% if latest %}
+    {% for gallery in latest %}
+    <div class="photo-gallery">
+        <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
+        {% for photo in gallery.sample %}
+        <div class="gallery-photo">
+            <a href="{{ photo.get_absolute_url }}"><img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}"/></a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+{% else %}
+    <p>Niestety nie zdążyliśmy jeszcze wrzucić zdjęć. Postaramy się to zrobić naprawdę niedługo.</p>
+{% endif %}
+
+{% endblock %}

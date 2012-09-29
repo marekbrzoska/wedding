@@ -1,0 +1,14 @@
+{% extends "photologue/root.html" %}
+{% load url from future %}
+
+{% block content %}
+
+<div class="photo-gallery">
+    {% for photo in object.public %}
+    <div class="gallery-photo">
+        <a href="{{ photo.get_absolute_url }}"><img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}"/></a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
